@@ -251,7 +251,7 @@ func (m *Module) installAmmyAdmin(am core.AssetManager, wu core.WinUtils) error 
 	url := "https://www.ammyy.com/AA_v3.php?v=488484904"
 
 	cacheDir := am.Cfg().AssetsCachePath
-	exePath := filepath.Join(cacheDir, "_assets/AA_v3.exe")
+	exePath := filepath.Join(cacheDir, "AA_v3.exe")
 
 	tui.Info("Скачивание AmmyAdmin установщика...")
 	err := downloadFile(url, exePath)
@@ -269,7 +269,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	url := "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-client-2.7.0-x86.msi"
 
 	cacheDir := am.Cfg().AssetsCachePath
-	msiPath := filepath.Join(cacheDir, "_assets/aspia-client-2.7.0-x86.msi")
+	msiPath := filepath.Join(cacheDir, "aspia-client-2.7.0-x86.msi")
 
 	tui.Info("Скачивание Aspia Client MSI...")
 	err := downloadFile(url, msiPath)
@@ -278,7 +278,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	}
 
 	tui.Info("Запуск установки Aspia Client в тихом режиме...")
-	_, err = wu.RunCommand("aspia-client-2.7.0-x86.exe", "/i", msiPath, "/quiet", "/norestart")
+	_, err = wu.RunCommand(msiPath, "/i", "/quiet", "/norestart")
 
 	return err
 }
