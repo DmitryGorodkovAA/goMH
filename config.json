@@ -71,7 +71,7 @@
 	"mitsu_config": {
 		"menu_text": "Mitsu Utilities",
 		"asset_id": "mitsu_asset",
-		"install_args": "/S"
+		"install_args": "/S /quiet"
 	},
 	"distro_config": {
 		"iiko": {
