@@ -40,6 +40,7 @@ func (m *Module) Run(am core.AssetManager, wu core.WinUtils) error {
 		{ID: "2", Name: "LiteManager", ServiceName: "ROMService", InstallFunc: m.installLiteManager, AllowReinstall: false},
 		{ID: "3", Name: "Getad Agent", ServiceName: "MH_Getad", InstallFunc: m.installGetad, AllowReinstall: true},
 		{ID: "4", Name: "AnyDesk", ServiceName: "AnyDesk", InstallFunc: m.installAnyDesk, AllowReinstall: false},
+		{ID: "5", Name: "Aspia Client", ServiceName: "AspiaClient", InstallFunc: m.installAspiaClient, AllowReinstall: false},
 		//anydesk, aspia, ammyadmin
 	}
 
@@ -242,6 +243,25 @@ func (m *Module) installAnyDesk(am core.AssetManager, wu core.WinUtils) error {
 
 	tui.Info("Запуск установки AnyDesk в тихом режиме...")
 	_, err = wu.RunCommand(exePath, "/S") // /S = silent install
+	return err
+}
+func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) error {
+	tui.Info("\n-> Начало установки Aspia Client...")
+
+	url := "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-client-2.7.0-x86.msi"
+
+	cacheDir := am.Cfg().AssetsCachePath
+	msiPath := filepath.Join(cacheDir, "aspia-client-2.7.0-x86.msi")
+
+	tui.Info("Скачивание Aspia Client MSI...")
+	err := downloadFile(url, msiPath)
+	if err != nil {
+		return fmt.Errorf("не удалось скачать Aspia Client: %w", err)
+	}
+
+	tui.Info("Запуск установки Aspia Client в тихом режиме...")
+	_, err = wu.RunCommand("msiexec.exe", "/i", msiPath, "/quiet", "/norestart")
+
 	return err
 }
 
