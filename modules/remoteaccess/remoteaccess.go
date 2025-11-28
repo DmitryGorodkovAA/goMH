@@ -278,7 +278,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	}
 
 	tui.Info("Запуск установки Aspia Client в тихом режиме...")
-	_, err = wu.RunCommand(msiPath, "/i", "/quiet", "/norestart")
+	_, err = wu.RunCommand("msiexec.exe", "/i", msiPath, "/quiet", "/norestart")
 
 	return err
 }
