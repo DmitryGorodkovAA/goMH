@@ -244,7 +244,7 @@
 		"install_args": ""
 	},
 	"asset_catalog": {
-		"mitsu": {
+		"mitsu_asset": {
 			"url": "https://mitsu.id/exe/Mitsu_Utilities_Pack.1.38.exe",
 			"type": "exe",
 			"destination": "C:/ProgramData/MyApp/Mitsu",
