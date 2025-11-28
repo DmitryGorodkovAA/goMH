@@ -325,8 +325,8 @@ func main() {
 		"RemoteAccess":  &remoteaccess.Module{},
 		"ServiceUtils":  &serviceutils.Module{},
 		"FiscalDrivers": &fiscaldrivers.Module{},
-		"UTM":           &utm.Module{},
-		"Mitsu":         &mitsu.Module{},
+		//"UTM":           &utm.Module{},
+		"Mitsu": &mitsu.Module{},
 	}
 
 	// Основной цикл
