@@ -65,6 +65,11 @@
 			"pass": "strongpass"
 		}
 	},
+	"mitsu_config": {
+		"menu_text": "Mitsu Utilities",
+		"asset_id": "mitsu_asset",
+		"install_args": "/S"
+	},
 	"distro_config": {
 		"iiko": {
 			"components": [
@@ -236,6 +241,12 @@
 		"install_args": ""
 	},
 	"asset_catalog": {
+		"mitsu": {
+			"url": "https://mitsu.id/exe/Mitsu_Utilities_Pack.1.38.exe",
+			"type": "exe",
+			"destination": "C:/ProgramData/MyApp/Mitsu",
+			"download_method": "http"
+		},
 		"7zip_installer": {
 			"url": "https://f.serty.top/distr/installer/assets/7z1900-x64.exe",
 			"type": "file",

@@ -10,6 +10,7 @@ import (
 	"goMH/modules/distro"
 	fiscaldrivers "goMH/modules/fiscal-drivers"
 	"goMH/modules/frpc"
+	"goMH/modules/mitsu"
 	"goMH/modules/regime"
 	"goMH/modules/remoteaccess"
 	"goMH/modules/serviceutils"
@@ -325,6 +326,7 @@ func main() {
 		"ServiceUtils":  &serviceutils.Module{},
 		"FiscalDrivers": &fiscaldrivers.Module{},
 		"UTM":           &utm.Module{},
+		"Mitsu":         &mitsu.Module{},
 	}
 
 	// Основной цикл

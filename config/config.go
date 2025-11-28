@@ -98,6 +98,11 @@ type UTMConfig struct {
 	AssetID     string `json:"asset_id"`
 	InstallArgs string `json:"install_args"`
 }
+type MitsuConfig struct {
+	MenuText    string `json:"menu_text"`
+	AssetID     string `json:"asset_id"`
+	InstallArgs string `json:"install_args"`
+}
 
 type Config struct {
 	RootPath            string               `json:"root_path"`
@@ -113,6 +118,7 @@ type Config struct {
 	MaintenanceConfig   MaintenanceConfig    `json:"MaintenanceConfig"`
 	FiscalDriversConfig []FiscalDriver       `json:"fiscal_drivers_config"`
 	UTMConfig           UTMConfig            `json:"utm_config"`
+	MitsuConfig         MitsuConfig          `json:"mitsu_config"`
 }
 
 type FTPConfig struct {

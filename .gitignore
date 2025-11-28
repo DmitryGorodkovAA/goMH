@@ -6,3 +6,5 @@ pipeline*
 .kilocode
 *.pdf
 *.py
+.idea
+.vscode
