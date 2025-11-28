@@ -39,7 +39,7 @@ func (m *Module) Run(am core.AssetManager, wu core.WinUtils) error {
 		{ID: "1", Name: "TeamViewer", ServiceName: "TeamViewer", InstallFunc: m.installTeamViewer, AllowReinstall: false},
 		{ID: "2", Name: "LiteManager", ServiceName: "ROMService", InstallFunc: m.installLiteManager, AllowReinstall: false},
 		{ID: "3", Name: "Getad Agent", ServiceName: "MH_Getad", InstallFunc: m.installGetad, AllowReinstall: true},
-		{ID: "4", Name: "AnyDesk", ServiceName: "AnyDeskфывфывфвы", InstallFunc: m.installAnyDesk, AllowReinstall: false},
+		{ID: "4", Name: "AnyDesk", ServiceName: "AnyDesk", InstallFunc: m.installAnyDesk, AllowReinstall: false},
 		//anydesk, aspia, ammyadmin
 	}
 
