@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"flag"
 	"fmt"
 	"goMH/assetmgr"
@@ -17,6 +16,7 @@ import (
 	"goMH/modules/regime"
 	"goMH/modules/remoteaccess"
 	"goMH/modules/serviceutils"
+	//"goMH/modules/utm"
 	"goMH/modules/vcomcaster"
 	"goMH/tui"
 	"goMH/winutils"
@@ -291,19 +291,6 @@ func main() {
 	}
 
 	cfg, err := config.LoadConfig(finalConfigPath)
-	if err != nil {
-		fmt.Println("Ошибка загрузки конфига:", err)
-		return
-	}
-
-	fmt.Printf("%+v\n", cfg) // выводит поля структуры и их значения
-	fmt.Printf("%p\n", cfg)
-
-	_, err = bufio.NewReader(os.Stdin).ReadBytes('\n')
-	if err != nil {
-		return
-	}
-
 	if err != nil {
 		log.Fatalf("Критическая ошибка: не удалось загрузить конфигурацию: %v", err)
 	}
