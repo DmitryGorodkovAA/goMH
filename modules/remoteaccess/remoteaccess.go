@@ -39,6 +39,8 @@ func (m *Module) Run(am core.AssetManager, wu core.WinUtils) error {
 		{ID: "1", Name: "TeamViewer", ServiceName: "TeamViewer", InstallFunc: m.installTeamViewer, AllowReinstall: false},
 		{ID: "2", Name: "LiteManager", ServiceName: "ROMService", InstallFunc: m.installLiteManager, AllowReinstall: false},
 		{ID: "3", Name: "Getad Agent", ServiceName: "MH_Getad", InstallFunc: m.installGetad, AllowReinstall: true},
+		{ID: "4", Name: "AnyDesk", ServiceName: "AnyDesk", InstallFunc: m.installAnyDesk, AllowReinstall: false},
+		//anydesk, aspia, ammyadmin
 	}
 
 	// Основной цикл подменю
@@ -224,6 +226,25 @@ func (m *Module) installLiteManager(am core.AssetManager, wu core.WinUtils) erro
 	return err
 }
 
+func (m *Module) installAnyDesk(am core.AssetManager, wu core.WinUtils) error {
+	tui.Info("\n-> Начало установки AnyDesk...")
+
+	url := "https://download.anydesk.com/AnyDesk.exe"
+
+	cacheDir := am.Cfg().AssetsCachePath
+	exePath := filepath.Join(cacheDir, "AnyDesk.exe")
+
+	tui.Info("Скачивание AnyDesk установщика...")
+	err := downloadFile(url, exePath)
+	if err != nil {
+		return fmt.Errorf("не удалось скачать AnyDesk: %w", err)
+	}
+
+	tui.Info("Запуск установки AnyDesk в тихом режиме...")
+	_, err = wu.RunCommand(exePath, "/S") // /S = silent install
+	return err
+}
+
 // --- Установка Getad ---
 func (m *Module) installGetad(am core.AssetManager, wu core.WinUtils) error {
 	const assetName = "Getad_Agent"
@@ -354,6 +375,32 @@ func (m *Module) installGetad(am core.AssetManager, wu core.WinUtils) error {
 		tui.SuccessF("Служба '%s' успешно установлена и запущена.", serviceName)
 	} else {
 		return fmt.Errorf("служба '%s' установлена, но ее статус '%s', а не 'RUNNING'", serviceName, status)
+	}
+
+	return nil
+}
+
+func downloadFile(url, dest string) error {
+	// HTTP GET
+	resp, err := http.Get(url)
+	if err != nil {
+		return fmt.Errorf("ошибка запроса: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		return fmt.Errorf("неудачный статус ответа: %s", resp.Status)
+	}
+
+	out, err := os.Create(dest)
+	if err != nil {
+		return fmt.Errorf("не удалось создать файл: %w", err)
+	}
+	defer out.Close()
+
+	_, err = io.Copy(out, resp.Body)
+	if err != nil {
+		return fmt.Errorf("ошибка записи файла: %w", err)
 	}
 
 	return nil
