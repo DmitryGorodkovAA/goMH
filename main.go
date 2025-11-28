@@ -291,7 +291,8 @@ func main() {
 	}
 
 	cfg, err := config.LoadConfig(finalConfigPath)
-	println(cfg)
+	println(*cfg)
+	println(&cfg)
 	_, err = bufio.NewReader(os.Stdin).ReadBytes('\n')
 	if err != nil {
 		return
