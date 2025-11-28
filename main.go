@@ -291,8 +291,14 @@ func main() {
 	}
 
 	cfg, err := config.LoadConfig(finalConfigPath)
-	println(*cfg)
-	println(&cfg)
+	if err != nil {
+		fmt.Println("Ошибка загрузки конфига:", err)
+		return
+	}
+
+	fmt.Printf("%+v\n", cfg) // выводит поля структуры и их значения
+	fmt.Printf("%p\n", cfg)
+
 	_, err = bufio.NewReader(os.Stdin).ReadBytes('\n')
 	if err != nil {
 		return
