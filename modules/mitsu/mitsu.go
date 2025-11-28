@@ -11,7 +11,7 @@ import (
 type Module struct{}
 
 func (m *Module) ID() string {
-	return "MITSU"
+	return "mitsu_asset"
 }
 
 func (m *Module) MenuText() string {

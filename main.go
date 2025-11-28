@@ -7,14 +7,15 @@ import (
 	"goMH/config"
 	"goMH/core"
 	"goMH/logging"
-	//"goMH/modules/distro"
+	"goMH/modules/distro"
+	"goMH/modules/utm"
+
 	fiscaldrivers "goMH/modules/fiscal-drivers"
 	"goMH/modules/frpc"
 	"goMH/modules/mitsu"
 	"goMH/modules/regime"
 	"goMH/modules/remoteaccess"
 	"goMH/modules/serviceutils"
-	//"goMH/modules/utm"
 	"goMH/modules/vcomcaster"
 	"goMH/tui"
 	"goMH/winutils"
@@ -318,15 +319,15 @@ func main() {
 
 	// Регистрация модулей
 	registeredModules := map[string]core.Installer{
-		"VComCaster": &vcomcaster.Module{},
-		//"iiko":          &distro.Module{},
+		"VComCaster":    &vcomcaster.Module{},
+		"iiko":          &distro.Module{},
 		"FRPC":          &frpc.Module{},
 		"Regime":        &regime.Module{},
 		"RemoteAccess":  &remoteaccess.Module{},
 		"ServiceUtils":  &serviceutils.Module{},
 		"FiscalDrivers": &fiscaldrivers.Module{},
-		//"UTM":           &utm.Module{},
-		"Mitsu": &mitsu.Module{},
+		"UTM":           &utm.Module{},
+		"Mitsu":         &mitsu.Module{},
 	}
 
 	// Основной цикл
