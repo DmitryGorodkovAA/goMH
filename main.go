@@ -318,8 +318,8 @@ func main() {
 
 	// Регистрация модулей
 	registeredModules := map[string]core.Installer{
-		"VComCaster":    &vcomcaster.Module{},
-		"iiko":          &distro.Module{},
+		"VComCaster": &vcomcaster.Module{},
+		//"iiko":          &distro.Module{},
 		"FRPC":          &frpc.Module{},
 		"Regime":        &regime.Module{},
 		"RemoteAccess":  &remoteaccess.Module{},
