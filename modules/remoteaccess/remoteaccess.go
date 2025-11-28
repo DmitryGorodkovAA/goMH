@@ -41,6 +41,7 @@ func (m *Module) Run(am core.AssetManager, wu core.WinUtils) error {
 		{ID: "3", Name: "Getad Agent", ServiceName: "MH_Getad", InstallFunc: m.installGetad, AllowReinstall: true},
 		{ID: "4", Name: "AnyDesk", ServiceName: "AnyDesk", InstallFunc: m.installAnyDesk, AllowReinstall: false},
 		{ID: "5", Name: "Aspia Client", ServiceName: "AspiaClient", InstallFunc: m.installAspiaClient, AllowReinstall: false},
+		{ID: "6", Name: "Aspia Client", ServiceName: "AspiaClient", InstallFunc: m.installAspiaClient, AllowReinstall: false},
 		//anydesk, aspia, ammyadmin
 	}
 
@@ -245,6 +246,24 @@ func (m *Module) installAnyDesk(am core.AssetManager, wu core.WinUtils) error {
 	_, err = wu.RunCommand(exePath, "/S") // /S = silent install
 	return err
 }
+func (m *Module) installAmmyAdmin(am core.AssetManager, wu core.WinUtils) error {
+	tui.Info("\n-> Начало установки AmmyAdmin...")
+
+	url := "https://www.ammyy.com/AA_v3.php?v=488484904"
+
+	cacheDir := am.Cfg().AssetsCachePath
+	exePath := filepath.Join(cacheDir, "AA_v3.exe")
+
+	tui.Info("Скачивание AmmyAdmin установщика...")
+	err := downloadFile(url, exePath)
+	if err != nil {
+		return fmt.Errorf("не удалось скачать AmmyAdmin: %w", err)
+	}
+
+	tui.Info("Запуск установки AmmyAdmin в тихом режиме...")
+	_, err = wu.RunCommand(exePath, "/S")
+	return err
+}
 func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) error {
 	tui.Info("\n-> Начало установки Aspia Client...")
 
@@ -260,7 +279,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	}
 
 	tui.Info("Запуск установки Aspia Client в тихом режиме...")
-	_, err = wu.RunCommand("msiexec.exe", "/i", msiPath, "/quiet", "/norestart")
+	_, err = wu.RunCommand("aspia-client-2.7.0-x86.exe", "/i", msiPath, "/quiet", "/norestart")
 
 	return err
 }
