@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"goMH/assetmgr"
@@ -290,6 +291,12 @@ func main() {
 	}
 
 	cfg, err := config.LoadConfig(finalConfigPath)
+	println(cfg)
+	_, err = bufio.NewReader(os.Stdin).ReadBytes('\n')
+	if err != nil {
+		return
+	}
+
 	if err != nil {
 		log.Fatalf("Критическая ошибка: не удалось загрузить конфигурацию: %v", err)
 	}
