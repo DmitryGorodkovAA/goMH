@@ -103,6 +103,15 @@ type MitsuConfig struct {
 	AssetID     string `json:"asset_id"`
 	InstallArgs string `json:"install_args"`
 }
+type AmmyyAdmin struct {
+	URL string `json:"url"`
+}
+type AnyDesk struct {
+	URL string `json:"url"`
+}
+type AspiaClient struct {
+	URL string `json:"url"`
+}
 
 type Config struct {
 	RootPath            string               `json:"root_path"`
@@ -119,6 +128,9 @@ type Config struct {
 	FiscalDriversConfig []FiscalDriver       `json:"fiscal_drivers_config"`
 	UTMConfig           UTMConfig            `json:"utm_config"`
 	MitsuConfig         MitsuConfig          `json:"mitsu_config"`
+	AmmyyAdmin          AmmyyAdmin           `json:"AmmyyAdmin"`
+	AnyDesk             AnyDesk              `json:"AnyDesk"`
+	AspiaClient         AspiaClient          `json:"AspiaClient"`
 }
 
 type FTPConfig struct {

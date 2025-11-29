@@ -68,6 +68,15 @@
 			"pass": "strongpass"
 		}
 	},
+	"AmmyyAdmin": {
+		"url": "https://downloader.disk.yandex.ru/disk/74c6ff2b0fd9a4ccd554e85cc09c6061707\" +\n\t\t\"ba2f6877873d1025514ce94c8caf8/692ae5d5/fKqInKw3d7bLFOeFnMGnhAIBp2FRrIbStjFyydy\" +\n\t\t\"PJnF25lkGG77Lrj1YZo7xOO2iNlBGkPcLJhq95k5oKail8u7RMH_MfnXYI_WMTUuF7ZCr8npumZHI4mid\" +\n\t\t\"PdWhecNq?uid=0&filename=AA_v3.exe&disposition=attachment&hash=&limit=0&content\" +\n\t\t\"_type=application%2Fvnd.microsoft.portable-executable&owner_uid=0&fsize=817272&h\" +\n\t\t\"id=0d38702417fe14d67303f1bbc9a9d745&media_type=executable&tknv=v3&etag=90aadf224\" +\n\t\t\"7149996ae443e2c82af3730",
+	},
+	"AnyDesk": {
+		"url": "https://download.anydesk.com/AnyDesk.exe"
+	},
+	"AspiaClient": {
+		"url": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-client-2.7.0-x86.msi"
+	},
 	"mitsu_config": {
 		"menu_text": "Mitsu Utilities",
 		"asset_id": "mitsu_asset",
