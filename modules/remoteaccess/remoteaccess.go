@@ -41,7 +41,7 @@ func (m *Module) Run(am core.AssetManager, wu core.WinUtils) error {
 		{ID: "3", Name: "Getad Agent", ServiceName: "MH_Getad", InstallFunc: m.installGetad, AllowReinstall: true},
 		{ID: "4", Name: "AnyDesk", ServiceName: "AnyDesk", InstallFunc: m.installAnyDesk, AllowReinstall: false},
 		{ID: "5", Name: "Aspia Client", ServiceName: "aspia-host-service", InstallFunc: m.installAspiaClient, AllowReinstall: false},
-		{ID: "6", Name: "Ammy Admin", ServiceName: "AmmyAdmin", InstallFunc: m.installAmmyAdmin, AllowReinstall: false},
+		{ID: "6", Name: "Ammy Admin", ServiceName: "AmmyyAdmin", InstallFunc: m.installAmmyAdmin, AllowReinstall: false},
 	}
 
 	// Основной цикл подменю
