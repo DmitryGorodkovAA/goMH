@@ -277,7 +277,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	url := am.Cfg().AspiaClient.URL
 
 	cacheDir := am.Cfg().AssetsCachePath
-	msiPath := filepath.Join(cacheDir, "aspia-client-2.7.0-x86.msi")
+	msiPath := filepath.Join(cacheDir, "aspia-console-2.7.0-x86.msi")
 
 	tui.Info("Скачивание Aspia Client MSI...")
 	err := downloadFile(url, msiPath)
