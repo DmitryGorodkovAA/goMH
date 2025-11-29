@@ -74,8 +74,10 @@
 	"AnyDesk": {
 		"url": "https://download.anydesk.com/AnyDesk.exe"
 	},
-	"AspiaClient": {
-		"url": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-console-2.7.0-x86.msi"
+	"Aspia": {
+		"url-client": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-client-2.7.0-x86.msi",
+		"url-console": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-console-2.7.0-x86.msi",
+		"url-host": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-host-2.7.0-x86.msi"
 	},
 	"mitsu_config": {
 		"menu_text": "Mitsu Utilities",

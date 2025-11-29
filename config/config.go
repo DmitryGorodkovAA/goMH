@@ -109,8 +109,10 @@ type AmmyyAdmin struct {
 type AnyDesk struct {
 	URL string `json:"url"`
 }
-type AspiaClient struct {
-	URL string `json:"url"`
+type Aspia struct {
+	URLClient  string `json:"url-client"`
+	URLConsole string `json:"url-console"`
+	URLHost    string `json:"url-host"`
 }
 
 type Config struct {
@@ -130,7 +132,7 @@ type Config struct {
 	MitsuConfig         MitsuConfig          `json:"mitsu_config"`
 	AmmyyAdmin          AmmyyAdmin           `json:"AmmyyAdmin"`
 	AnyDesk             AnyDesk              `json:"AnyDesk"`
-	AspiaClient         AspiaClient          `json:"AspiaClient"`
+	Aspia               Aspia                `json:"Aspia"`
 }
 
 type FTPConfig struct {
