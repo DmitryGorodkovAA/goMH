@@ -306,6 +306,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	//}
 
 	_, err := wu.RunCommand(hostPath, "/S")
+	fmt.Println(hostPath, "/S")
 	return err
 }
 
