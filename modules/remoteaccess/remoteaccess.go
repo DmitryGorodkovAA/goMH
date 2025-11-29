@@ -305,8 +305,7 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	//	return fmt.Errorf("ошибка установки Aspia Host: %w", err)
 	//}
 
-	_, err := wu.RunCommand(hostPath, "/S")
-	fmt.Println(hostPath, "/S")
+	_, err := wu.RunCommand(hostPath)
 	return err
 }
 
