@@ -77,7 +77,7 @@
 	"Aspia": {
 		"url-client": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-client-2.7.0-x86.msi",
 		"url-console": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-console-2.7.0-x86.msi",
-		"url-host": "https://github.com/dchapyshev/aspia/releases/download/v2.7.0/aspia-host-2.7.0-x86.msi"
+		"url-host": "https://downloader.disk.yandex.ru/disk/ed308699d6a99df2fcbaa43579c669e31e8fd183d7eaece75a76e64c5c935f85/692b73c7/fKqInKw3d7bLFOeFnMGnhKRi8l_uNA0USqD-FFYInqTxW8H3zjx4wefTffiet9Joiut5XYutpAvgVMTPWDU1FfGToYAjpOFJXm3g_3U5AvKr8npumZHI4midPdWhecNq?uid=0&filename=aspia-host-2.7.0-x86_64.exe&disposition=attachment&hash=&limit=0&content_type=application%2Fvnd.microsoft.portable-executable&owner_uid=0&fsize=11115970&hid=0820e0834326b095367fafc410cd9cc2&media_type=executable&tknv=v3&etag=786385a931bb9035bb21f4642567d2e1"
 	},
 	"mitsu_config": {
 		"menu_text": "Mitsu Utilities",

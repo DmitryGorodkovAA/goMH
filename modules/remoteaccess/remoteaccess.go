@@ -266,43 +266,41 @@ func (m *Module) installAmmyAdmin(am core.AssetManager, wu core.WinUtils) error 
 func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) error {
 	tui.Info("\n-> Начало установки Aspia Client...")
 
-	urlClient := am.Cfg().Aspia.URLClient
-	urlConsole := am.Cfg().Aspia.URLConsole
 	urlHost := am.Cfg().Aspia.URLHost
 
 	cacheDir := am.Cfg().AssetsCachePath
 
-	clientPath := filepath.Join(cacheDir, "aspia-client-2.7.0-x86.msi")
-	consolePath := filepath.Join(cacheDir, "aspia-console-2.7.0-x86.msi")
-	hostPath := filepath.Join(cacheDir, "aspia-host-2.7.0-x86.msi")
+	//clientPath := filepath.Join(cacheDir, "aspia-client-2.7.0-x86.msi")
+	//consolePath := filepath.Join(cacheDir, "aspia-console-2.7.0-x86.msi")
+	hostPath := filepath.Join(cacheDir, "aspia-host-2.7.0-x86_64.exe")
 
-	tui.Info("Скачивание Aspia Client...")
-	if err := downloadFile(urlClient, clientPath); err != nil {
-		return fmt.Errorf("не удалось скачать Aspia Client: %w", err)
-	}
-
-	tui.Info("Скачивание Aspia Console...")
-	if err := downloadFile(urlConsole, consolePath); err != nil {
-		return fmt.Errorf("не удалось скачать Aspia Console: %w", err)
-	}
+	//tui.Info("Скачивание Aspia Client...")
+	//if err := downloadFile(urlClient, clientPath); err != nil {
+	//	return fmt.Errorf("не удалось скачать Aspia Client: %w", err)
+	//}
+	//
+	//tui.Info("Скачивание Aspia Console...")
+	//if err := downloadFile(urlConsole, consolePath); err != nil {
+	//	return fmt.Errorf("не удалось скачать Aspia Console: %w", err)
+	//}
 
 	tui.Info("Скачивание Aspia Host...")
 	if err := downloadFile(urlHost, hostPath); err != nil {
 		return fmt.Errorf("не удалось скачать Aspia Host: %w", err)
 	}
 
-	tui.Info("Установка Aspia Client...")
-	if _, err := wu.RunCommand("msiexec.exe", "/i", clientPath, "/quiet", "/norestart"); err != nil {
-		return fmt.Errorf("ошибка установки Aspia Client: %w", err)
-	}
-
-	tui.Info("Установка Aspia Console...")
-	if _, err := wu.RunCommand("msiexec.exe", "/i", consolePath, "/quiet", "/norestart"); err != nil {
-		return fmt.Errorf("ошибка установки Aspia Console: %w", err)
-	}
+	//tui.Info("Установка Aspia Client...")
+	//if _, err := wu.RunCommand("msiexec.exe", "/i", clientPath, "/quiet", "/norestart"); err != nil {
+	//	return fmt.Errorf("ошибка установки Aspia Client: %w", err)
+	//}
+	//
+	//tui.Info("Установка Aspia Console...")
+	//if _, err := wu.RunCommand("msiexec.exe", "/i", consolePath, "/quiet", "/norestart"); err != nil {
+	//	return fmt.Errorf("ошибка установки Aspia Console: %w", err)
+	//}
 
 	tui.Info("Установка Aspia Host...")
-	if _, err := wu.RunCommand("msiexec.exe", "/i", hostPath, "/quiet", "/norestart"); err != nil {
+	if _, err := wu.RunCommand(hostPath, "/quiet", "/norestart"); err != nil {
 		return fmt.Errorf("ошибка установки Aspia Host: %w", err)
 	}
 
