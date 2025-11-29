@@ -300,11 +300,13 @@ func (m *Module) installAspiaClient(am core.AssetManager, wu core.WinUtils) erro
 	//}
 
 	tui.Info("Установка Aspia Host...")
-	if _, err := wu.RunCommand(hostPath, "/quiet", "/norestart"); err != nil {
-		return fmt.Errorf("ошибка установки Aspia Host: %w", err)
-	}
 
-	return nil
+	//if _, err := wu.RunCommand(hostPath, "/norestart"); err != nil {
+	//	return fmt.Errorf("ошибка установки Aspia Host: %w", err)
+	//}
+
+	_, err := wu.RunCommand(hostPath, "/S")
+	return err
 }
 
 // --- Установка Getad ---
