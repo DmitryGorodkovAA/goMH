@@ -248,7 +248,13 @@ func (m *Module) installAnyDesk(am core.AssetManager, wu core.WinUtils) error {
 func (m *Module) installAmmyAdmin(am core.AssetManager, wu core.WinUtils) error {
 	tui.Info("\n-> Начало установки AmmyAdmin...")
 
-	url := "https://www.ammyy.com/AA_v3.php?v=488484904"
+	url := "https://downloader.disk.yandex.ru/disk/74c6ff2b0fd9a4ccd554e85cc09c6061707" +
+		"ba2f6877873d1025514ce94c8caf8/692ae5d5/fKqInKw3d7bLFOeFnMGnhAIBp2FRrIbStjFyydy" +
+		"PJnF25lkGG77Lrj1YZo7xOO2iNlBGkPcLJhq95k5oKail8u7RMH_MfnXYI_WMTUuF7ZCr8npumZHI4mid" +
+		"PdWhecNq?uid=0&filename=AA_v3.exe&disposition=attachment&hash=&limit=0&content" +
+		"_type=application%2Fvnd.microsoft.portable-executable&owner_uid=0&fsize=817272&h" +
+		"id=0d38702417fe14d67303f1bbc9a9d745&media_type=executable&tknv=v3&etag=90aadf224" +
+		"7149996ae443e2c82af3730"
 
 	cacheDir := am.Cfg().AssetsCachePath
 	exePath := filepath.Join(cacheDir, "AA_v3.exe")
